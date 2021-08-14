@@ -1,0 +1,115 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .modal-btn {
+    @apply opacity-50 px-6 py-2 rounded-md sm:w-auto text-base sm:text-sm font-medium;
+  }
+  .modal-btn-save {
+    @apply modal-btn bg-primary  text-white hover:bg-blue-900;
+  }
+  .modal-btn-cancel {
+    @apply modal-btn mr-3 inline-flex justify-center border border-gray-300 shadow-sm bg-white text-default hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+  }
+  input {
+    @apply mb-2;
+  }
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 400;
+  src: url('./assets/fonts/woff2/1Ptug8zYS_SKggPNyC0ITw.woff2') format('woff2');
+}
+
+* {
+  font-family: "Raleway";
+}
+
+.container {
+  max-width: 960px!important;
+}
+
+
+i {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  backdrop-filter: blur(2px);
+}
+
+.fade-modal {
+  animation: modal 0.3s linear;
+}
+  
+@keyframes modal {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  transform-origin: top left;
+  top: 14px;
+  left: 10px;
+  font-size: 16px;
+  pointer-events: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:focus):valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:not(:focus):valid ~ label {
+  transform: translateY(-6px) scale(.75);
+  color: #f06139;
+}
+
+.divider-line {
+  flex: 1;
+}
+
+.emoji-picker {
+  right: -12px; 
+  bottom: -228px;
+}
+
+.min-w-200 {
+  min-width: 200px;
+}
+
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.absolute-center-x {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
