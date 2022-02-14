@@ -1,76 +1,11 @@
-# heystacks web application
+# Vue 3 + Typescript + Vite
 
-Discover the best public Google docs
+This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-###### Front-end
-vue3, vue-router, vuex, tailwind css
-###### Back-end
-sails.js, mysql, redis, mailgun, aws s3, googleapis, bitcoinjs 
+## Recommended IDE Setup
 
-### To start
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-###### Front-end
-```
-cd backend
-npm install
-npm run start
-```
-Now a node.js server is running on port 1337. It uses diskDb which should automatically create schema and be ready to use.
+## Type Support For `.vue` Imports in TS
 
-###### Back-end
-```
-cd frontend
-npm install
-npm run serve
-```
-Now a vue.js development application is running on http://localhost:8080
-
-You should be able to view feed page, hall-of-fame page, everything styled. You won't be able to add docs yet, as you need to set up some of the env environment variables:
-```
-// Google Drive keys:  
-googleClientId
-googleProjectId
-googleClientSecret
-googleAccessToken
-googleRefreshToken
-
-// Emailing keys:
-alertEmail
-mailgunKey
-mailgunDomain
-homePath
-
-// Twitter keys:
-twitterKey
-twitterSecret
-twitterTokenKey
-twitterTokenSecret
-
-// AWS S3 keys:
-s3KeyId
-s3AccessKey
-
-// Database keys:
-dbAdapter
-dbUrl
-
-// Node key:
-NODE_ENV
-```
-
-### To do
-
-###### Front-end
-1. Front-end application needs to be update to Vue3
-* packages and dependencies versions
-* Vue components need to be refactored to Vue3 composition style and using Typescript
-* Vuex version 4
-* any other changes needed for the new vue version
-2. Vuetify layout library needs to be replaced with Tailwind CSS
-* existing styles should be retained as much as possible
-* new classes, theme variables, etc. created in Tailwind
-3. Component and views list is quite long now, they should be organised into folders
-
-###### Back-end
-1. Api/controllers/..Controller.js files have a lot of "actions" in them. They should be divided into separate files in separate folders
-2. There is a lot of manual html and text injection inside controllers. Those snippets should be moved out to separate folders/files and imported as needed. E.g. EmailController line 19 - this html should be in a separate file, preferably as a template. 
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.

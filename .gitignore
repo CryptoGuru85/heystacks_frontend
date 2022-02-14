@@ -1,12 +1,7 @@
-backend/.tmp
-backend/node_modules
-backend/package-lock.json
-frontend/.tmp
-frontend/node_modules
-frontend/package-lock.json
-
 .DS_Store
 node_modules
+package-lock.json
+.tmp
 /dist
 
 # local env files
